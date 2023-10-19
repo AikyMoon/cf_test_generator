@@ -1,0 +1,28 @@
+{
+    "config_name": "candies",
+    "groups" : {
+        "0": {
+           "a" : {
+            "type": "int",
+            "min": 1,
+            "max": 10
+           },
+           "b" : {
+            "type": "int",
+            "min": 1,
+            "max": 10
+           },
+           "t": {
+            "type": "int",
+            "min": 1,
+            "max": 3
+           },
+           "arr": {"type": "list_int", "min": 1, "max": 100, "len": "a"},
+           "n_samples": 10
+        }
+    },
+    "output_format": {
+        "1": {"vars": ["t"], "repeat": null, "sep": null},
+        "2": {"vars": ["a", "b", "arr"], "repeat": "t", "sep": [" ", "\n"]}
+    }
+}
