@@ -1,28 +1,52 @@
 {
-    "config_name": "test_config",
+    "config_name": "candies",
     "groups" : {
         "0": {
-           "a" : {
+           "a": {
             "type": "int",
-            "min": 1,
-            "max": 10
+            "optional": {
+                "min": 1,
+                "max": 100
+            }
            },
-           "b" : {
+           "b": {
             "type": "int",
-            "min": 1,
-            "max": 10
+            "optional": {
+                "min": 1,
+                "max": 100
+            }
            },
            "t": {
             "type": "int",
-            "min": 1,
-            "max": 3
+            "optional": {
+                "min": 1,
+                "max": 3
+            }
            },
-           "arr": {"type": "list_int", "min": 1, "max": 100, "len": "a"},
-           "n_samples": 10
+           "arr1": {
+            "type": "list",
+            "optional":{
+                "element_type": "int",
+                "min": 1,
+                "max": 100,
+                "len": "a"
+            }
+           },
+           "arr2": {
+            "type": "list",
+            "optional":{
+                "element_type": "char",
+                "valid_chars": "abcdefg",
+                "len": "b"
+            }
+           }
         }
+    },
+    "samples": {
+        "0": 3
     },
     "output_format": {
         "1": {"vars": ["t"], "repeat": null, "sep": null},
-        "2": {"vars": ["a", "b", "arr"], "repeat": "t", "sep": [" ", "\n"]}
+        "2": {"vars": ["a", "b", "arr1"], "repeat": "t", "sep": [" ", "\n"]}
     }
 }

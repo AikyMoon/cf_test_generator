@@ -230,6 +230,6 @@ class TestcaseGenerator:
     
 TESTCASES_DIR = "/Users/aikymoon/Desktop/codeforces_custom_tasks/tests/"
 
-conf = Configuration("/Users/aikymoon/Desktop/codeforces_custom_tasks/tests_configurations/test2.json")
+conf = Configuration("/Users/aikymoon/Desktop/codeforces_custom_tasks/tests_configurations/test.json")
 gen = TestcaseGenerator(conf, TESTCASES_DIR)
 gen.generate()
