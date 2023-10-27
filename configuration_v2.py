@@ -230,7 +230,7 @@ class TestcaseGenerator:
     def __init__(self, testcase_dir: str, configuration: Configuration) -> None:
         self.testcase_dir: str = testcase_dir[:-1] if testcase_dir[-1] == "/" else testcase_dir
         self.conf: Configuration = configuration
-        self.conf_name = conf.config_name
+        self.conf_name = self.conf.config_name
 
         if not os.path.exists(f"{self.testcase_dir}/{self.conf_name}/"):
             os.mkdir(f"{self.testcase_dir}/{self.conf_name}/")
