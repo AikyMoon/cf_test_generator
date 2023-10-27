@@ -266,7 +266,8 @@ class TestcaseGenerator:
                 # pprint(output)
                 self.generate_dump(filename, output)
                 print(colored(f"Тест: {filename} успешно сгенерирован", "green"))
-            
+            print(colored(f"Подгруппа: {group} успешно сгенерирована", "yellow"))
+            print()
 
     
     def generate_dump(self, filename: str, output_data: dict[int, tuple[str]]) -> None:
@@ -294,10 +295,14 @@ class TestcaseGenerator:
 
 
 
-conf = Configuration("/Users/aikymoon/Desktop/codeforces_custom_tasks/tests_configurations/test.json")
-# conf.show_info()
+def generate(config_path: str, output_path: str):
+    conf = Configuration(config_path)
+    gen = TestcaseGenerator(output_path, conf)
+    gen.generate()
 
 
-TESTCASES_DIR = "/Users/aikymoon/Desktop/codeforces_custom_tasks/tests/"
-gen = TestcaseGenerator(TESTCASES_DIR, conf)
-gen.generate()
+CONFIG_PATH = ""
+OUTPUT_DIR = ""
+
+if __name__ == "__main__":
+    generate(CONFIG_PATH, OUTPUT_DIR)
